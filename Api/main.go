@@ -61,6 +61,8 @@ func getPerroByID(c *gin.Context) {
 		}
 	}
 
+	c.IndentedJSON(http.StatusNotFound, gin.H{"error": "Perro no encontrado"})
+
 }
 
 func main() {
@@ -69,7 +71,7 @@ func main() {
 
 	router := gin.Default()
 	router.GET("/perros", getPerros)
-	router.GET("/perros/:id", getPerros)
+	router.GET("/perros/:id", getPerroByID)
 
 	router.POST("/perros", crearPerro)
 
