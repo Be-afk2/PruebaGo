@@ -5,8 +5,6 @@ import (
 	"net/http"
 	"strconv"
 
-	"Api/auth"
-
 	"github.com/gin-gonic/gin"
 )
 
@@ -68,7 +66,6 @@ func getPerroByID(c *gin.Context) {
 }
 
 func main() {
-	auth.AuthMiddleware()
 
 	// Start the server
 	fmt.Println("Starting the server")
